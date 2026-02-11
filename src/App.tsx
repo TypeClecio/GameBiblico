@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 
+import "./assets/styles/global.scss";
+
 function App() {
   return (
     <>
