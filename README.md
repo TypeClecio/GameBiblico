@@ -1,4 +1,4 @@
-# Testamenteei
+# GameBíblico
 
 > Uma aplicação interativa e dinâmica desenvolvida em React, TypeScript e Vite
 
@@ -6,7 +6,7 @@
 
 ## 📋 Descrição
 
-Testamenteei é uma aplicação frontend moderna que oferece uma experiência interativa ao usuário através de múltiplas etapas de navegação. Com uma arquitetura bem estruturada em React, o projeto é construído com foco em performance, qualidade de código e escalabilidade.
+GameBíblico é uma aplicação frontend moderna que oferece uma experiência interativa ao usuário através de múltiplas etapas de navegação. Com uma arquitetura bem estruturada em React, o projeto é construído com foco em performance, qualidade de código e escalabilidade.
 
 ---
 
@@ -37,8 +37,8 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados:
 ### 1. Clone o repositório
 
 ```bash
-git clone <url-do-repositorio>
-cd testamenteei-frontend
+git clone https://github.com/TypeClecio/GameBiblico.git
+cd GameBiblico
 ```
 
 ### 2. Instale as dependências
@@ -65,7 +65,7 @@ Para iniciar o servidor de desenvolvimento com hot reload:
 npm run dev
 ```
 
-A aplicação estará disponível em: `http://localhost:5174`
+A aplicação estará disponível em: `http://localhost:8080`
 
 ### Build para Produção
 
@@ -98,7 +98,7 @@ npm run lint
 ## 📁 Estrutura do Projeto
 
 ```
-testamenteei-frontend/
+GameBiblico/
 ├── src/
 │   ├── pages/
 │   │   ├── Inicio/          # Página inicial da aplicação
