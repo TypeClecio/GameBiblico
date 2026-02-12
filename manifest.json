@@ -1,0 +1,7 @@
+{
+  "name": "GameBlíblico",
+  "short_name": "GameBlíblico",
+  "theme_color": "#D3EDFF",
+  "background_color": "#D3EDFF",
+  "display": "standalone"
+}
