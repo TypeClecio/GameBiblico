@@ -3,12 +3,14 @@ import { Analytics } from '@vercel/analytics/react';
 
 import "./assets/styles/global.scss";
 
+import Inicio from './pages/Inicio/Inicio';
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<>Início</>} />
+          <Route path="/" element={<Inicio />} />
         </Routes>
       </BrowserRouter>
 
