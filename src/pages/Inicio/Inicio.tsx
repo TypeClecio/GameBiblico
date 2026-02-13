@@ -25,7 +25,7 @@ export default function Inicio() {
         <button id="iniciar-partida">Iniciar Partida</button>
       </section>
       
-      <section id="guias">
+      <section id="guias" className={styles.secaoGuias}>
         <button id="ranking">
           <Trophy />
           
