@@ -3,9 +3,11 @@
   width: 100vw;
   height: 100vh;
   padding: 30px;
+  padding-bottom: 100px;
   display: flex;
   gap: 50px;
   flex-direction: column;
+  justify-content: space-between;
 
   button {
     border: none;
@@ -32,14 +34,60 @@
 // Segunda seção
 .secaoAvatar {
   width: 100%;
-  gap: 20px;
+  gap: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  transform: translateY(-50px);
 
   .imagemJogador {
     img {
       width: 200px;
     }
+  }
+
+  .identificadoresJogador {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .nomeJogador {
+      font-size: 26px;
+    }
+
+    .idJogador {
+      font-family: "Inter";
+      font-size: 16px;
+      margin-top: -5px;
+    }
+  }
+
+  .botaoIniciarPartida {
+    background-color: var(--cor-terciaria);
+    font-size: 18px;
+    color: #FFF;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: var(--sombra-padrao);
+  }
+}
+
+// Terceira seção
+.secaoGuias {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  .botoesGuias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--cor-secundaria);
+    width: 90px;
+    height: 80px;
+    border-radius: 20px;
   }
 }
