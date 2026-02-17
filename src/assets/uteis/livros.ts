@@ -1,4 +1,4 @@
-const testamentos =
+const livros =
   [
     // --- 39 livros do Antigo Testamento ---
     { nome: "Gênesis", testamento: "antigo" },
@@ -71,4 +71,4 @@ const testamentos =
     { nome: "Apocalipse", testamento: "novo" }
   ];
 
-export default testamentos;
+export default livros;
