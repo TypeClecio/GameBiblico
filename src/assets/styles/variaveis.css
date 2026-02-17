@@ -1,5 +1,9 @@
 :root {
+  /* Cores */
   --cor-primaria: #D3EDFF;
   --cor-secundaria: #B1DEFF;
   --cor-terciaria: #42B0FF;
+
+  /* Sombras */
+  --sombra-padrao: 0 3px 7px -5px rgb(0, 0, 0);
 }
