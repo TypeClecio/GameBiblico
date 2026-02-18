@@ -5,5 +5,5 @@
   --cor-terciaria: #42B0FF;
 
   /* Sombras */
-  --sombra-padrao: 0 3px 7px -5px rgb(0, 0, 0);
+  --sombra-padrao: 0 3px 3px rgba(0, 0, 0, 10%);
 }

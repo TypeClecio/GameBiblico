@@ -26,4 +26,19 @@ a {
 
 button {
   border: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; // mobile
+}
+
+button:focus,
+button:focus-visible,
+button:active {
+  outline: none;
+  box-shadow: none;
+  transform: none;
+}
+
+button:active {
+  background: inherit;
 }
