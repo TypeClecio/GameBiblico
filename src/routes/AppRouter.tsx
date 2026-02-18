@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Inicio from '../pages/Inicio';
 
-function AppRouter() {
+export default function AppRouter() {
   return (
     <Routes>
       <Route path="/*" element={<Navigate to="/" replace />} />
@@ -10,6 +10,4 @@ function AppRouter() {
       <Route path="/inicio" element={<Inicio />} />
     </Routes>
   )
-}
-
-export default AppRouter;
+};
