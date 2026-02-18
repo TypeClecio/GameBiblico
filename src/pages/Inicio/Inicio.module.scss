@@ -1,4 +1,4 @@
-// TAG Main
+// Escopo global da página INICIAL
 .escopo {
   width: 100vw;
   height: 100vh;
@@ -10,20 +10,19 @@
   justify-content: space-between;
 
   button {
-    border: none;
     background-color: transparent;
+    pointer-events: unset;
   }
 }
 
-// Primeira seção
+// Seção com detalhes da aplicação
 .secaoInformacoes {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 
   button {
-    width: 50px;
-    height: 50px;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -31,10 +30,10 @@
   }
 }
 
-// Segunda seção
-.secaoAvatar {
+// Seção com informações do jogador
+.secaoJogador {
   width: 100%;
-  gap: 30px;
+  gap: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +41,7 @@
 
   .imagemJogador {
     img {
-      width: 200px;
+      width: 150px;
     }
   }
 
@@ -50,30 +49,31 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    cursor: default;
 
     .nomeJogador {
-      font-size: 26px;
+      font-size: 22px;
     }
 
     .idJogador {
       font-family: "Inter";
-      font-size: 16px;
+      font-size: 12px;
       margin-top: -5px;
     }
   }
 
   .botaoIniciarPartida {
     background-color: var(--cor-terciaria);
-    font-size: 18px;
+    font-size: 15px;
     color: #FFF;
-    width: 200px;
-    height: 60px;
+    width: 175px;
+    height: 50px;
     border-radius: 30px;
     box-shadow: var(--sombra-padrao);
   }
 }
 
-// Terceira seção
+// Seção com guias auxiliares
 .secaoGuias {
   display: flex;
   gap: 10px;
@@ -86,8 +86,9 @@
     justify-content: center;
     gap: 5px;
     background-color: var(--cor-secundaria);
-    width: 90px;
-    height: 80px;
+    width: 80px;
+    height: 70px;
     border-radius: 20px;
+    font-size: 12px;
   }
 }
