@@ -8,7 +8,8 @@ export default function Inicio() {
     <main className={styles.escopo}>
       <section className={styles.secaoInformacoes}>
         <button className={styles.botaoDeInformacoes}>
-          <Info size={22} strokeWidth={3} />
+          <strong>GameBíblico</strong>
+          <Info size={18} strokeWidth={2.5} />
         </button>
       </section>
 
