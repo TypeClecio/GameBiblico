@@ -24,6 +24,11 @@ a {
   color: var(--cor-terciaria);
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 button {
   border: none;
   cursor: pointer;
