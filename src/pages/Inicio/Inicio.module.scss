@@ -4,14 +4,14 @@
   height: 100vh;
   padding: 30px;
   padding-bottom: 100px;
-  display: flex;
   gap: 50px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   button {
-    background-color: transparent;
     pointer-events: unset;
+    background-color: transparent;
   }
 }
 
@@ -38,15 +38,15 @@
 // Seção com informações do jogador
 .secaoJogador {
   width: 100%;
-  gap: 25px;
+  gap: 0px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   transform: translateY(-50px);
 
   .imagemJogador {
     img {
-      width: 150px;
+      width: 170px;
     }
   }
 
@@ -57,43 +57,44 @@
     cursor: default;
 
     .nomeJogador {
-      font-size: 22px;
+      font-size: 24px;
     }
 
     .idJogador {
-      font-family: "Inter";
-      font-size: 12px;
+      font-size: 14px;
       margin-top: -5px;
+      font-family: "Inter";
     }
   }
 
   .botaoIniciarPartida {
-    background-color: var(--cor-terciaria);
-    font-size: 15px;
-    color: #FFF;
-    width: 175px;
+    width: 170px;
     height: 50px;
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 50px;
     border-radius: 30px;
     box-shadow: var(--sombra-padrao);
+    background-color: var(--cor-terciaria);
   }
 }
 
 // Seção com guias auxiliares
 .secaoGuias {
-  display: flex;
   gap: 10px;
+  display: flex;
   justify-content: center;
 
   .botoesGuias {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 5px;
-    background-color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 80px;
     height: 70px;
-    border-radius: 20px;
     font-size: 12px;
+    border-radius: 20px;
+    background-color: var(--cor-secundaria);
   }
 }
