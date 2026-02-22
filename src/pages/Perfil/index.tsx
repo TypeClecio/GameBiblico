@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import styles from "./perfil.module.scss";
+import styles from "./Perfil.module.scss";
 import avatar from "../../../public/avatar-1-gamebiblico.svg";
 
 export default function Perfil() {
