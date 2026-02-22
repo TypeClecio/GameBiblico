@@ -1,0 +1,12 @@
+// Escopo global da página
+.escopo {
+  width: 100vw;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background-color: transparent;
+  }
+}
