@@ -2,7 +2,6 @@
 .escopo {
   width: 100vw;
   height: 100vh;
-  padding: 30px;
   display: flex;
   flex-direction: column;
 
@@ -16,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 30px;
 
   a, button {
     height: 22px;
@@ -24,19 +24,14 @@
   .tituloPagina {
     font-size: 16px;
   }
-
-  .complementoCabecalho {
-    opacity: 0;
-    user-select: none;
-    pointer-events: none;
-  }
 }
 
 // Seção com Pódio onde destaca os 3 melhores jogadore
 .secaoPodio {
-  gap: 10px;
+  gap: 5px;
   display: flex;
-  padding-top: 50px;
+  width: 100vw;
+  padding: 0 20px;
 
   // Cada jogador
   .top3 {
@@ -76,9 +71,9 @@
     }
 
     .idJogador {
-      transform: translateY(-5px);
       font-size: 10px;
       font-family: "Inter";
+      transform: translateY(-5px);
     }
   }
 
@@ -125,6 +120,64 @@
       .tempoColocacao {
         font-weight: bold;
       }
+    }
+  }
+}
+
+// Lista com demais jogadores que acertaram todos os livros
+.secaoListaDeJogadores {
+  width: 100vw;
+  height: 100%;
+  padding: 25px;
+  padding-bottom: 50px;
+  background-color: #FFF;
+  border-radius: 25px 25px 0 0;
+
+  .listaDemaisColocados {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jogadorColocado {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 20px;
+    background-color: var(--cor-secundaria);
+    justify-content: space-between;
+
+    .posicaoColocado {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Poppins";
+    }
+
+    .avatarColocado {
+      width: 50px;
+    }
+
+    .informacoesJogadorColocado {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 80px;
+
+      .nomeJogadorColocado {
+        font-size: 16px;
+      }
+
+      .idJogadorColocado {
+        font-size: 10px;
+        font-family: "Inter";
+        transform: translateY(-5px);
+      }
+    }
+
+    .tempoColocado {
+      font-size: 16px;
+      font-family: "Poppins";
+      font-weight: 600;
     }
   }
 }
