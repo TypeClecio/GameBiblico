@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { BookMarked, Pause, Timer, X } from "lucide-react";
+
 import styles from "./Jogatina.module.scss";
+import ModalBase from "../../components/ModalBase";
 
 export default function Jogatina() {
+  const [mostrarModal, setMostrarModal] = useState(false);
+
   return (
     <main className={styles.escopo}>
       <section className={styles.antigoTestamento}>
@@ -28,10 +33,14 @@ export default function Jogatina() {
         </div>
 
         <div className={styles.gatilhosDaJogatina}>
-          <button>
+          <button
+            onClick={() => setMostrarModal(true)}
+          >
             <X size={26} strokeWidth={3} />
           </button>
-          <button>
+          <button
+            onClick={() => setMostrarModal(true)}
+          >
             <Pause size={24} strokeWidth={3} />
           </button>
         </div>
@@ -40,6 +49,11 @@ export default function Jogatina() {
       <section className={styles.novoTestamento}>
         <span>Novo</span>
       </section>
+
+      {mostrarModal
+        ? <ModalBase acaoModal="sair" />
+        : false
+      }
     </main>
   )
 }

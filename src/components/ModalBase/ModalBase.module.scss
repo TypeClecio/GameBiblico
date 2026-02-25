@@ -1,0 +1,61 @@
+.escopo {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #FFF;
+
+  .titulo {
+    font-size: 16px;
+  }
+
+  .descricao {
+    font-size: 14px;
+    transform: translateY(-5px);
+  }
+
+  .acoes {
+    gap: 15px;
+    display: flex;
+
+    .acaoSair {
+      background-color: #EB4848;
+    }
+
+    .acaoPausar {
+      background-color: #22CD6F;
+    }
+
+    .acaoPrincipal {
+      width: 150px;
+      height: 40px;
+      color: #FFF;
+      font-size: 14px;
+      border-radius: 10px;
+    }
+
+    .acaoSecundaria {
+      width: 85px;
+      height: 40px;
+      color: #000;
+      font-size: 14px;
+      border-radius: 10px;
+      background-color: #CECECE;
+    }
+  }
+}
