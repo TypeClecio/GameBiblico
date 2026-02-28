@@ -1,9 +1,12 @@
 import { ChevronLeft, Gamepad2Icon, Home, Share2 } from "lucide-react";
 
 import styles from "./Final.module.scss";
-import avatar from "/public/avatar-1-gamebiblico.svg";
+import Podio from "../../components/Podio";
+import Mensao from "../../components/Mensao";
 
 export default function Final() {
+  const campeao = true; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
+
   return (
     <main className={styles.escopo}>
       <section className={styles.secaoCabecalho}>
@@ -33,67 +36,10 @@ export default function Final() {
         </button>
       </section>
 
-      <section className={styles.secaoPodio}>
-        <div className={`${styles.top3} ${styles.posicao2}`}>
-          <div className={styles.informacoesJogador}>
-            <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
-
-            <h3 className={styles.nomeJogador}>Jurema</h3>
-
-            <p className={styles.idJogador}>#758991532</p>
-          </div>
-
-          <div className={styles.informacoesColocacao}>
-            <div className={styles.conteudoColocacao}>
-              <div className={styles.jogadorColocacao}>
-                <span className={styles.posicaoColocacao}>2º</span>
-              </div>
-
-              <span className={styles.tempoColocacao}>50.2seg</span>
-            </div>
-          </div>
-        </div>
-
-        <div className={`${styles.top3} ${styles.posicao1}`}>
-          <div className={styles.informacoesJogador}>
-            <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
-
-            <h3 className={styles.nomeJogador}>TochaViva</h3>
-
-            <p className={styles.idJogador}>#469874563</p>
-          </div>
-
-          <div className={styles.informacoesColocacao}>
-            <div className={styles.conteudoColocacao}>
-              <div className={styles.jogadorColocacao}>
-                <span className={styles.posicaoColocacao}>1º</span>
-              </div>
-
-              <span className={styles.tempoColocacao}>49.8seg</span>
-            </div>
-          </div>
-        </div>
-
-        <div className={`${styles.top3} ${styles.posicao3}`}>
-          <div className={styles.informacoesJogador}>
-            <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
-
-            <h3 className={styles.nomeJogador}>Tocha</h3>
-
-            <p className={styles.idJogador}>#132756984</p>
-          </div>
-
-          <div className={styles.informacoesColocacao}>
-            <div className={styles.conteudoColocacao}>
-              <div className={styles.jogadorColocacao}>
-                <span className={styles.posicaoColocacao}>3º</span>
-              </div>
-
-              <span className={styles.tempoColocacao}>54.4seg</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {campeao
+        ? <Podio />
+        : <Mensao />
+      }
 
       <section className={styles.secaoBotoesDeAcao}>
         <button className={styles.botaoVoltarAoInicio}>
