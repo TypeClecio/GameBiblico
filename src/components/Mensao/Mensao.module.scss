@@ -1,0 +1,69 @@
+// Lista com demais jogadores que acertaram todos os livros
+.secaoListaDeJogadores {
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(to bottom, #FFF, transparent);
+  border-radius: 25px 25px 0 0;
+
+  .listaDemaisColocados {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listaDemaisColocados li:nth-child(2) {
+    scale: 0.9;
+    transform: translateY(-5px);
+  }
+
+  .listaDemaisColocados li:nth-child(3) {
+    scale: 0.8;
+    transform: translateY(-20px);
+  }
+  
+  .listaDemaisColocados li:nth-child(4) {
+    scale: 0.7;
+    transform: translateY(-50px);
+  }
+  .jogadorColocado {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 20px;
+    background-color: var(--cor-secundaria);
+    justify-content: space-between;
+
+    .posicaoColocado {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Poppins";
+    }
+
+    .avatarColocado {
+      width: 50px;
+    }
+
+    .informacoesJogadorColocado {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 80px;
+
+      .nomeJogadorColocado {
+        font-size: 16px;
+      }
+
+      .idJogadorColocado {
+        font-size: 10px;
+        font-family: "Inter";
+        transform: translateY(-5px);
+      }
+    }
+
+    .tempoColocado {
+      font-size: 16px;
+      font-family: "Poppins";
+      font-weight: 600;
+    }
+  }
+}
