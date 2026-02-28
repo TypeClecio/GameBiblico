@@ -2,11 +2,203 @@
 .escopo {
   width: 100vw;
   height: 100vh;
-  padding: 30px;
+  padding: 20px;
+  padding-top: 0;
+  gap: 25px;
   display: flex;
   flex-direction: column;
 
   button {
     background-color: transparent;
+  }
+}
+
+// Seção cabeçalho
+.secaoCabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+
+  a, button {
+    height: 22px;
+  }
+
+  .tituloPagina {
+    font-size: 16px;
+  }
+
+  .complementoCabecalho {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+// Seção onde mostra o resultado da partida em qual posição o jogador ficou
+.secaoResultadoDaPartida {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .fraseResultadoDaPartida {
+    width: 300px;
+    height: 50px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12.5px;
+    background-color: #FFF;
+    font-size: 13px;
+
+    .colocacaoDaPartida {
+      color: var(--cor-terciaria);
+    }
+  }
+}
+
+// Seção que incentiva ao usuário compartilhar o resultado
+.secaoCompartilharResultado {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .botaoCompartilharResultado {
+    width: 140px;
+    height: 35px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    border-radius: 13px;
+    background-color: var(--cor-terciaria);
+  }
+}
+
+// Seção com Pódio onde destaca os 3 melhores jogadore
+.secaoPodio {
+  gap: 5px;
+  display: flex;
+  width: 100%;
+
+  // Cada jogador
+  .top3 {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .posicao1 .conteudoColocacao {
+    height: 200px !important;
+  }
+
+  .posicao2 .conteudoColocacao {
+    height: 175px !important;
+  }
+
+  .posicao3 .conteudoColocacao {
+    height: 150px !important;
+  }
+  
+  // Dados do jogador
+  .informacoesJogador {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .avatarJogador {
+      width: 80px;
+    }
+
+    .nomeJogador {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .idJogador {
+      font-size: 10px;
+      font-family: "Inter";
+      transform: translateY(-5px);
+    }
+  }
+
+  // Posição no Ranking
+  .informacoesColocacao {
+    width: 100%;
+    height: 200pxpx;
+
+    .conteudoColocacao {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 200px;
+      padding: 20px 0;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, var(--cor-terciaria), transparent);
+
+      .jogadorColocacao, .tempoColocacao {
+        font-family: "Inter";
+      }
+
+      .jogadorColocacao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        transform: rotateZ(45deg);
+        background-color: #FFF;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 10%);
+        
+        .posicaoColocacao {
+          font-size: 16px;
+          font-family: "Inter";
+          font-weight: 600;
+          transform: rotateZ(-45deg);
+        }
+      }
+
+      .tempoColocacao {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Seção com botões de controle de rota
+.secaoBotoesDeAcao {
+  gap: 10px;
+  display: flex;
+  width: 100%;
+
+  .botaoVoltarAoInicio, .botaoJogarNovamente {
+    width: 100%;
+    height: 50px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: 13px;
+  }
+
+  .botaoVoltarAoInicio {
+    background-color: #FFF;
+  }
+
+  .botaoJogarNovamente {
+    color: #FFF;
+    background-color: var(--cor-terciaria);
   }
 }
