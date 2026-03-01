@@ -1,24 +1,12 @@
-import { ChevronLeft, Share2 } from "lucide-react";
-
 import styles from "./Ranking.module.scss";
 import avatar from "../../../public/avatar-1-gamebiblico.svg";
+
+import Cabecalho from "../../components/Header";
 
 export default function Ranking() {
   return (
     <main className={styles.escopo}>
-      <section className={styles.secaoCabecalho}>
-        <a href="/">
-          <button>
-            <ChevronLeft size={22} strokeWidth={3} />
-          </button>
-        </a>
-
-        <span className={styles.tituloPagina}>Ranking</span>
-
-        <span className={styles.complementoCabecalho}>
-          <Share2 size={22} strokeWidth={2} />
-        </span>
-      </section>
+      <Cabecalho tituloPagina="Ranking" className={styles.secaoCabecalho} />
       
       <section className={styles.secaoPodio}>
         <div className={`${styles.top3} ${styles.posicao2}`}>

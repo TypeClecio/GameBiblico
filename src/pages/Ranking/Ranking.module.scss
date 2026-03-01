@@ -10,20 +10,9 @@
   }
 }
 
-// Seção cabeçalho
+// Estilo extra no Componente Cabecalho para ser ajustado pela página atual
 .secaoCabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 30px;
-
-  a, button {
-    height: 22px;
-  }
-
-  .tituloPagina {
-    font-size: 16px;
-  }
 }
 
 // Seção com Pódio onde destaca os 3 melhores jogadore

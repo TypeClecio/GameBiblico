@@ -2,36 +2,13 @@
 .escopo {
   width: 100vw;
   height: 100vh;
-  padding: 20px;
-  padding-top: 0;
+  padding: 30px 20px;
   gap: 25px;
   display: flex;
   flex-direction: column;
 
   button {
     background-color: transparent;
-  }
-}
-
-// Seção cabeçalho
-.secaoCabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 0;
-
-  a, button {
-    height: 22px;
-  }
-
-  .tituloPagina {
-    font-size: 16px;
-  }
-
-  .complementoCabecalho {
-    opacity: 0;
-    user-select: none;
-    pointer-events: none;
   }
 }
 
