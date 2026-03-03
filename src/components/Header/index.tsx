@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 
 import styles from "./Header.module.scss";
@@ -11,11 +12,13 @@ interface CabecalhoProps {
 export default function Cabecalho({
   tituloPagina,
   link = "/",
-  className = ""
+  className: estilo = ""
 }: CabecalhoProps) {
+  const navigate = useNavigate();
+
   return (
-    <section className={`${styles.secaoCabecalho} ${className}`}>
-      <a href={link}>
+    <section className={`${styles.secaoCabecalho} ${estilo}`}>
+      <a onClick={() => navigate(link, { replace: true })}>
         <button>
           <ChevronLeft size={22} strokeWidth={3} />
         </button>

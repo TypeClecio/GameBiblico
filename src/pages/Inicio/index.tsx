@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { Info, Trophy, UserRoundPen } from "lucide-react";
 
 import styles from "./Inicio.module.scss";
 import avatar from "/public/avatar-1-gamebiblico.svg";
 
 export default function Inicio() {
+  const navigate = useNavigate();
+
   return (
     <main className={styles.escopo}>
       <section className={styles.secaoInformacoes}>
@@ -23,21 +26,27 @@ export default function Inicio() {
           <p className={styles.idJogador}>#469874563</p>
         </div>
 
-        <button className={styles.botaoIniciarPartida}>Iniciar Partida</button>
+        <a onClick={() => navigate("/jogatina")}>
+          <button className={styles.botaoIniciarPartida}>Iniciar Partida</button>
+        </a>
       </section>
 
       <section className={styles.secaoGuias}>
-        <button className={styles.botoesGuias}>
-          <Trophy size={25} strokeWidth={2.5} />
+        <a onClick={() => navigate("/ranking")}>
+          <button className={styles.botoesGuias}>
+            <Trophy size={25} strokeWidth={2.5} />
 
-          <span>Ranking</span>
-        </button>
+            <span>Ranking</span>
+          </button>
+        </a>
 
-        <button className={styles.botoesGuias}>
-          <UserRoundPen size={25} strokeWidth={2.5} />
+        <a onClick={() => navigate("/perfil")}>
+          <button className={styles.botoesGuias}>
+            <UserRoundPen size={25} strokeWidth={2.5} />
 
-          <span>Pefil</span>
-        </button>
+            <span>Pefil</span>
+          </button>
+        </a>
       </section>
     </main>
   )
