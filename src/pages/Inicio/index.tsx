@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Info, Trophy, UserRoundPen } from "lucide-react";
 
 import styles from "./Inicio.module.scss";
-import avatar from "/public/avatar-1-gamebiblico.svg";
+import avatar from "/src/assets/Avatares/fogo.svg";
 
 export default function Inicio() {
   const navigate = useNavigate();

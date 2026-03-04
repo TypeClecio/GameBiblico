@@ -1,5 +1,5 @@
 import styles from "./Ranking.module.scss";
-import avatar from "../../../public/avatar-1-gamebiblico.svg";
+import avatar from "/src/assets/Avatares/fogo.svg";
 
 import Cabecalho from "../../components/Header";
 
