@@ -56,6 +56,11 @@
   }
 }
 
+.secaoListaDeJogadores {
+  height: initial;
+  background: linear-gradient(to bottom, #FFF, transparent);
+}
+
 // Seção com botões de controle de rota
 .secaoBotoesDeAcao {
   gap: 10px;
@@ -63,7 +68,8 @@
   width: 100%;
   padding-top: 50px;
 
-  .botaoVoltarAoInicio, .botaoJogarNovamente {
+  .botaoVoltarAoInicio,
+  .botaoJogarNovamente {
     width: 100%;
     height: 50px;
     gap: 5px;

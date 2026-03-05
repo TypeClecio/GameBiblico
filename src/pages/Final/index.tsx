@@ -2,9 +2,9 @@ import { Gamepad2Icon, Home, Share2 } from "lucide-react";
 
 import styles from "./Final.module.scss";
 
-import Podio from "../../components/Podio";
-import Mensao from "../../components/Mensao";
 import Cabecalho from "../../components/Header";
+import Podio from "../../components/Podio";
+import DemaisJogadores from "../../components/DemaisJogadores";
 
 export default function Final() {
   const campeao = true; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
@@ -30,7 +30,7 @@ export default function Final() {
 
       {campeao
         ? <Podio />
-        : <Mensao />
+        : <DemaisJogadores estilo={styles.secaoListaDeJogadores} resumoPartida={true} />
       }
 
       <section className={styles.secaoBotoesDeAcao}>
