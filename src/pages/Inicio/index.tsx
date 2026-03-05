@@ -47,7 +47,6 @@ export default function Inicio() {
 
           <span>Pefil</span>
         </button>
-
       </section>
     </main>
   )

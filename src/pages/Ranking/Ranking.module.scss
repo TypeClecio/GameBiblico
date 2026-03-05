@@ -1,0 +1,21 @@
+// Escopo global da página INICIAL
+.escopo {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background-color: transparent;
+  }
+}
+
+// Estilo extra no Componente Cabecalho para ser ajustado pela página atual
+.secaoCabecalho {
+  padding: 30px;
+}
+
+// Seção com Pódio onde destaca os 3 melhores jogadore
+.secaoPodio {
+  padding: 0 20px;
+}

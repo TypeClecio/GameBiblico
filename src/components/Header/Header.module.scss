@@ -1,0 +1,25 @@
+// Seção cabeçalho
+.secaoCabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a, button {
+    height: 22px;
+  }
+
+  .tituloPagina {
+    font-size: 16px;
+  }
+
+  .recursoExtra {
+    width: 22px;
+    height: 22px;
+  }
+
+  .desativado {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+}
