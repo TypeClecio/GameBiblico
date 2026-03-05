@@ -1,19 +1,16 @@
-import nomeJogadores from "./nomeJogadores";
+import type { Jogador } from "../interfaces/Jogador";
 
-export type JogadorLocal = {
-  nome: string;
-  id: string;
-  criado_em: string;
-};
+import { avatares } from "./avatares";
+import nomeJogadores from "./nomeJogadores";
 
 const CHAVE_ARMAZENAMENTO = "jogador";
 
 function gerarIdJogador() {
   if (typeof crypto !== "undefined" && crypto.randomUUID) {
-    return `#${crypto.randomUUID().replace(/-/g, "").slice(0, 9)}`;
+    return `${crypto.randomUUID().replace(/-/g, "").slice(0, 9)}`;
   }
 
-  return `#${Math.floor(100_000_000 + Math.random() * 900_000_000)}`;
+  return `${Math.floor(100_000_000 + Math.random() * 900_000_000)}`;
 }
 
 function sortearNomeJogador() {
@@ -21,10 +18,17 @@ function sortearNomeJogador() {
   return nomeJogadores[indice].nome;
 }
 
-function criarJogadorLocal(): JogadorLocal {
+function sortearAvatarJogador() {
+  const indice = Math.floor(Math.random() * avatares.length);
+  return indice;
+}
+
+function criarJogadorLocal(): Jogador {
   return {
     nome: sortearNomeJogador(),
     id: gerarIdJogador(),
+    tempo: 0,
+    avatar: sortearAvatarJogador(),
     criado_em: new Date().toISOString(),
   };
 }
@@ -34,7 +38,7 @@ function criarJogadorLocal(): JogadorLocal {
  * @param NomeJogador Um nome selecionado automáticamente da lista de nomes
  * @returns Um objeto com NOME e ID do jogador
  */
-export function obterOuCriarJogadorLocal(): JogadorLocal {
+export function obterOuCriarJogadorLocal(): Jogador {
   if (typeof window === "undefined") {
     return criarJogadorLocal();
   }
@@ -43,7 +47,7 @@ export function obterOuCriarJogadorLocal(): JogadorLocal {
 
   if (salvo) {
     try {
-      const jogador = JSON.parse(salvo) as JogadorLocal;
+      const jogador = JSON.parse(salvo) as Jogador;
 
       if (jogador.nome && jogador.id) {
         return jogador;
