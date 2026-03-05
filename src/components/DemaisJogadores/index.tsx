@@ -4,6 +4,19 @@ import styles from "./DemaisJogadores.module.scss";
 import Avatar from "../Avatar";
 import { avatares } from "../../utils/avatares";
 
+interface Jogador {
+  nome: string;
+  id: string;
+  tempo: number;
+  avatar: number;
+  criado_em: string;
+}
+
+interface DemaisJogadoresPorps {
+  estilo?: string;
+  resumoPartida?: boolean;
+}
+
 const pod = [
   {
     nome: "TachoViva",
@@ -35,18 +48,12 @@ const pod = [
   }
 ]
 
-interface Jogador {
-  nome: string;
-  id: string;
-  tempo: number;
-  avatar: number;
-  criado_em: string;
-}
+export default function DemaisJogadores({ estilo, resumoPartida }: DemaisJogadoresPorps): JSX.Element {
+  const resumo = resumoPartida ? "efeitoCascata" : "";
 
-export default function DemaisJogadores(): JSX.Element {
   return (
-    <section className={styles.secaoListaDeJogadores}>
-      <ul className={styles.listaDemaisColocados}>{
+    <section className={`${styles.secaoListaDeJogadores} ${estilo}`}>
+      <ul className={`${styles.listaDemaisColocados} ${styles[resumo]}`}>{
         pod.map((jogador: Jogador, index) => (
           <li key={jogador.id} className={styles.jogadorColocado}>
             <span className={styles.posicaoColocado}>{index + 4}</span>
