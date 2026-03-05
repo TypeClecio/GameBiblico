@@ -1,68 +1,75 @@
 import styles from "./Podio.module.scss";
-import avatar from "/public/avatar-1-gamebiblico.svg";
 
-export default function Podio() {
+import Avatar from "../Avatar";
+import { avatares } from "../../utils/avatares";
+
+interface Jogador {
+  nome: string;
+  id: string;
+  tempo: number;
+  avatar: number;
+  criado_em: string;
+}
+
+interface PodioProps {
+  estilo?: string;
+}
+
+const jogadores: Jogador[] = [
+  {
+    nome: "TochaViva",
+    id: "469874563",
+    tempo: 49.8,
+    avatar: 0,
+    criado_em: "2026-03-03T17:15:02.539Z",
+  },
+  {
+    nome: "Jurema",
+    id: "758991532",
+    tempo: 50.2,
+    avatar: 1,
+    criado_em: "2026-03-03T17:15:02.539Z",
+  },
+  {
+    nome: "Tocha",
+    id: "132756984",
+    tempo: 54.4,
+    avatar: 2,
+    criado_em: "2026-03-03T17:15:02.539Z",
+  },
+];
+
+const ordemPodio = [1, 0, 2];
+
+export default function Podio({ estilo }: PodioProps) {
   return (
-    <section className={styles.secaoPodio}>
-      <div className={`${styles.top3} ${styles.posicao2}`}>
-        <div className={styles.informacoesJogador}>
-          <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
+    <section className={`${styles.secaoPodio} ${estilo}`}>
+      {ordemPodio.map((indiceJogador) => {
+        const jogador = jogadores[indiceJogador];
+        const posicao = indiceJogador + 1;
 
-          <h3 className={styles.nomeJogador}>Jurema</h3>
+        return (
+          <div key={jogador.id} className={`${styles.top3} ${styles[`posicao${posicao}`]}`}>
+            <div className={styles.informacoesJogador}>
+              <Avatar src={avatares[jogador.avatar]} alt="Avatar" />
 
-          <p className={styles.idJogador}>#758991532</p>
-        </div>
+              <h3 className={styles.nomeJogador}>{jogador.nome}</h3>
 
-        <div className={styles.informacoesColocacao}>
-          <div className={styles.conteudoColocacao}>
-            <div className={styles.jogadorColocacao}>
-              <span className={styles.posicaoColocacao}>2º</span>
+              <p className={styles.idJogador}>#{jogador.id}</p>
             </div>
 
-            <span className={styles.tempoColocacao}>50.2seg</span>
-          </div>
-        </div>
-      </div>
+            <div className={styles.informacoesColocacao}>
+              <div className={styles.conteudoColocacao}>
+                <div className={styles.jogadorColocacao}>
+                  <span className={styles.posicaoColocacao}>{posicao}º</span>
+                </div>
 
-      <div className={`${styles.top3} ${styles.posicao1}`}>
-        <div className={styles.informacoesJogador}>
-          <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
-
-          <h3 className={styles.nomeJogador}>TochaViva</h3>
-
-          <p className={styles.idJogador}>#469874563</p>
-        </div>
-
-        <div className={styles.informacoesColocacao}>
-          <div className={styles.conteudoColocacao}>
-            <div className={styles.jogadorColocacao}>
-              <span className={styles.posicaoColocacao}>1º</span>
+                <span className={styles.tempoColocacao}>{jogador.tempo}seg</span>
+              </div>
             </div>
-
-            <span className={styles.tempoColocacao}>49.8seg</span>
           </div>
-        </div>
-      </div>
-
-      <div className={`${styles.top3} ${styles.posicao3}`}>
-        <div className={styles.informacoesJogador}>
-          <img className={styles.avatarJogador} src={avatar} alt="Avatar" />
-
-          <h3 className={styles.nomeJogador}>Tocha</h3>
-
-          <p className={styles.idJogador}>#132756984</p>
-        </div>
-
-        <div className={styles.informacoesColocacao}>
-          <div className={styles.conteudoColocacao}>
-            <div className={styles.jogadorColocacao}>
-              <span className={styles.posicaoColocacao}>3º</span>
-            </div>
-
-            <span className={styles.tempoColocacao}>54.4seg</span>
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </section>
-  )
+  );
 }
