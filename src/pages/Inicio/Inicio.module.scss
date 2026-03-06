@@ -38,17 +38,11 @@
 // Seção com informações do jogador
 .secaoJogador {
   width: 100%;
-  gap: 0px;
+  gap: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   transform: translateY(-50px);
-
-  .imagemJogador {
-    img {
-      width: 170px;
-    }
-  }
 
   .identificadoresJogador {
     display: flex;
@@ -72,7 +66,7 @@
     height: 50px;
     color: #FFF;
     font-size: 16px;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 30px;
     box-shadow: var(--sombra-padrao);
     background-color: var(--cor-terciaria);

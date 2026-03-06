@@ -1,9 +1,20 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Info, Trophy, UserRoundPen } from "lucide-react";
 
 import styles from "./Inicio.module.scss";
-import avatar from "../../../public/avatar-1-gamebiblico.svg";
+
+import Avatar from "../../components/Avatar";
+
+import { avatares } from "../../utils/avatares";
+import { obterOuCriarJogadorLocal } from "../../utils/jogadorLocal";
+
 
 export default function Inicio() {
+  const navigate = useNavigate();
+
+  const [jogador] = useState(obterOuCriarJogadorLocal());
+
   return (
     <main className={styles.escopo}>
       <section className={styles.secaoInformacoes}>
@@ -14,26 +25,24 @@ export default function Inicio() {
       </section>
 
       <section className={styles.secaoJogador}>
-        <div className={styles.imagemJogador}>
-          <img src={avatar} alt="Avatar" />
-        </div>
+        <Avatar src={avatares[jogador.avatar]} tamanho={130} />
 
         <div className={styles.identificadoresJogador}>
-          <h3 className={styles.nomeJogador}>TochaViva</h3>
-          <p className={styles.idJogador}>#469874563</p>
+          <h3 className={styles.nomeJogador}>{jogador.nome}</h3>
+          <p className={styles.idJogador}>#{jogador.id}</p>
         </div>
 
-        <button className={styles.botaoIniciarPartida}>Iniciar Partida</button>
+        <button onClick={() => navigate("/jogatina")} className={styles.botaoIniciarPartida}>Iniciar Partida</button>
       </section>
 
       <section className={styles.secaoGuias}>
-        <button className={styles.botoesGuias}>
+        <button onClick={() => navigate("/ranking")} className={styles.botoesGuias}>
           <Trophy size={25} strokeWidth={2.5} />
 
           <span>Ranking</span>
         </button>
 
-        <button className={styles.botoesGuias}>
+        <button onClick={() => navigate("/perfil")} className={styles.botoesGuias}>
           <UserRoundPen size={25} strokeWidth={2.5} />
 
           <span>Pefil</span>
