@@ -1,0 +1,86 @@
+// Escopo global da página
+.escopo {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background-color: transparent;
+  }
+}
+
+// Seções de botões para decidir se o livro é do Antigo ou Novo Testamento
+.antigoTestamento, .novoTestamento {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+
+  span {
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+// Seção com Indicadores importante para a Jogatina
+.secaoDeIndicadores {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .barraDeTempo {
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .tempoRestante {
+      width: 70%;
+      height: 10px;
+      border-radius: 10px;
+      border: 1px solid #000;
+      background-color: #FFBA59;
+    }
+  }
+
+  .indicadores {
+    width: 100vw;
+    height: 50px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    color: #FFF;
+    border: 3px solid #005999;
+    background-color: var(--cor-terciaria);
+
+    > div {
+      gap: 5px;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 16px;
+        font-weight: bolder;
+        font-family: "Poppins";
+      }
+    }
+
+    .nomeDoLivroEmTela {
+      font-weight: bolder;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 4px #000;
+    }
+  }
+
+  .gatilhosDaJogatina {
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+  }
+}
