@@ -1,23 +1,16 @@
 import type { JSX } from "react";
+import type { Jogador } from "../../interfaces/Jogador";
 
 import styles from "./DemaisJogadores.module.scss";
 import Avatar from "../Avatar";
 import { avatares } from "../../utils/avatares";
-
-interface Jogador {
-  nome: string;
-  id: string;
-  tempo: number;
-  avatar: number;
-  criado_em: string;
-}
 
 interface DemaisJogadoresPorps {
   estilo?: string;
   resumoPartida?: boolean;
 }
 
-const pod = [
+const pod: Jogador[] = [
   {
     nome: "TachoViva",
     id: "469874563",

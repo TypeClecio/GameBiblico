@@ -1,15 +1,9 @@
+import type { Jogador } from "../../interfaces/Jogador";
+
 import styles from "./Podio.module.scss";
 
 import Avatar from "../Avatar";
 import { avatares } from "../../utils/avatares";
-
-interface Jogador {
-  nome: string;
-  id: string;
-  tempo: number;
-  avatar: number;
-  criado_em: string;
-}
 
 interface PodioProps {
   estilo?: string;
