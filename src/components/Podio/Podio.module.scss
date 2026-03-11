@@ -14,15 +14,15 @@
   }
 
   .posicao1 .conteudoColocacao {
-    height: 200px !important;
+    height: 200px;
   }
 
   .posicao2 .conteudoColocacao {
-    height: 175px !important;
+    height: 175px;
   }
 
   .posicao3 .conteudoColocacao {
-    height: 150px !important;
+    height: 150px;
   }
 
   // Dados do jogador
@@ -51,7 +51,6 @@
   // Posição no Ranking
   .informacoesColocacao {
     width: 100%;
-    height: 200pxpx;
 
     .conteudoColocacao {
       gap: 20px;
@@ -59,7 +58,6 @@
       align-items: center;
       flex-direction: column;
       width: 100%;
-      height: 200px;
       padding: 20px 0;
       border-radius: 10px;
       background: linear-gradient(to bottom, var(--cor-terciaria), transparent);
