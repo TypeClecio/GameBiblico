@@ -5,8 +5,10 @@ import styles from "./Final.module.scss";
 import Cabecalho from "../../components/Header";
 import Podio from "../../components/Podio";
 import DemaisJogadores from "../../components/DemaisJogadores";
+import { useNavigate } from "react-router-dom";
 
 export default function Final() {
+  const navigate = useNavigate();
   const campeao = true; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
 
   return (
@@ -34,12 +36,18 @@ export default function Final() {
       }
 
       <section className={styles.secaoBotoesDeAcao}>
-        <button className={styles.botaoVoltarAoInicio}>
+        <button
+          onClick={() => navigate("/")}
+          className={styles.botaoVoltarAoInicio}
+        >
           <Home size={16} strokeWidth={2.5} />
           Voltar ao início
         </button>
 
-        <button className={styles.botaoJogarNovamente}>
+        <button
+          onClick={() => navigate("/jogatina")}
+          className={styles.botaoJogarNovamente}
+        >
           <Gamepad2Icon size={16} strokeWidth={2.5} />
           Jogar novamente
         </button>
