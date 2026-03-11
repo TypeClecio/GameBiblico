@@ -1,18 +1,17 @@
-import { useNavigate } from "react-router-dom";
 import { Gamepad2Icon, Home, Share2 } from "lucide-react";
 
 import styles from "./Final.module.scss";
-import Podio from "../../components/Podio";
-import Mensao from "../../components/Mensao";
+
 import Cabecalho from "../../components/Header";
+import Podio from "../../components/Podio";
+import DemaisJogadores from "../../components/DemaisJogadores";
 
 export default function Final() {
-  const navigator = useNavigate();
-  const campeao = true; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
+  const campeao = false; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
 
   return (
     <main className={styles.escopo}>
-      <Cabecalho tituloPagina="Resumo" />
+      <Cabecalho tituloPagina="Resumo" className={styles.secaoCabecalho} />
 
       <section className={styles.secaoResultadoDaPartida}>
         <p className={styles.fraseResultadoDaPartida}>
@@ -31,22 +30,16 @@ export default function Final() {
 
       {campeao
         ? <Podio />
-        : <Mensao />
+        : <DemaisJogadores estilo={styles.secaoListaDeJogadores} resumoPartida={true} />
       }
 
       <section className={styles.secaoBotoesDeAcao}>
-        <button
-          onClick={() => navigator("/")}
-          className={styles.botaoVoltarAoInicio}
-        >
+        <button className={styles.botaoVoltarAoInicio}>
           <Home size={16} strokeWidth={2.5} />
           Voltar ao início
         </button>
 
-        <button
-          onClick={() => navigator("/jogatina")}
-          className={styles.botaoJogarNovamente}
-        >
+        <button className={styles.botaoJogarNovamente}>
           <Gamepad2Icon size={16} strokeWidth={2.5} />
           Jogar novamente
         </button>
