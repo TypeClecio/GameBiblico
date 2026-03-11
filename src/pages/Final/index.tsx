@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, Gamepad2Icon, Home, Share2 } from "lucide-react";
+import { Gamepad2Icon, Home, Share2 } from "lucide-react";
 
 import styles from "./Final.module.scss";
 import Podio from "../../components/Podio";
 import Mensao from "../../components/Mensao";
+import Cabecalho from "../../components/Header";
 
 export default function Final() {
   const navigator = useNavigate();
@@ -11,17 +12,7 @@ export default function Final() {
 
   return (
     <main className={styles.escopo}>
-      <section className={styles.secaoCabecalho}>
-        <a href="/">
-          <button>
-            <ChevronLeft size={22} strokeWidth={3} />
-          </button>
-        </a>
-
-        <span className={styles.tituloPagina}>Resumo</span>
-
-        <span className={styles.complementoCabecalho}>.</span>
-      </section>
+      <Cabecalho tituloPagina="Resumo" />
 
       <section className={styles.secaoResultadoDaPartida}>
         <p className={styles.fraseResultadoDaPartida}>
