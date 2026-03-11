@@ -19,8 +19,8 @@ export default function Avatar({
   tamanho = 50
 }: AvatarProps) {
   return (
-    <div className={styles.imagemJogador}>
-      <img src={src} alt={alt} width={tamanho} height={tamanho} />
+    <div className={styles.imagemJogador} style={{width: tamanho, height: tamanho}}>
+      <img src={src} alt={alt} />
     </div>
   )
 }

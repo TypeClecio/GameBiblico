@@ -1,5 +1,4 @@
 .imagemJogador {
-  padding: 10px;
   overflow: hidden;
   border-radius: 100%;
   background-color: #FFF;
@@ -9,6 +8,7 @@
   justify-content: center;
 
   img {
+    width: 70%;
     object-fit: contain;
     object-position: center;
   }
