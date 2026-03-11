@@ -7,7 +7,7 @@ import Podio from "../../components/Podio";
 import DemaisJogadores from "../../components/DemaisJogadores";
 
 export default function Final() {
-  const campeao = false; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
+  const campeao = true; // Verdadeiro: mostra o pódio; Falso: mosta a lista de mensões.
 
   return (
     <main className={styles.escopo}>
