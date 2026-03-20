@@ -1,4 +1,6 @@
-const livros =
+import type { Livro } from "../interfaces/Livros";
+
+const livros: Livro[] =
   [
     // --- 39 livros do Antigo Testamento ---
     { nome: "Gênesis", testamento: "antigo" },
