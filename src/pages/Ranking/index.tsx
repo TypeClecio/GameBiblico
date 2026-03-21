@@ -8,7 +8,7 @@ export default function Ranking() {
   return (
     <main className={styles.escopo}>
       <Cabecalho tituloPagina="Ranking" className={styles.secaoCabecalho} />
-      <Podio estilo={styles.secaoPodio} />
+      <Podio estilo={styles.secaoPodio} tamanhoAvatar={70} />
       <DemaisJogadores />
     </main>
   );

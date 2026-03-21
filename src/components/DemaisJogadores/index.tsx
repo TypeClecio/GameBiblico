@@ -21,7 +21,7 @@ export default function DemaisJogadores({ estilo, resumoPartida }: DemaisJogador
           <li key={jogador.id} className={styles.jogadorColocado}>
             <span className={styles.posicaoColocado}>{index + 4}</span>
 
-            <Avatar src={avatares[jogador.avatar]} alt="Avatar" tamanho={30} />
+            <Avatar src={avatares[jogador.avatar]} alt="Avatar" tamanho={50} />
 
             <div className={styles.informacoesJogadorColocado}>
               <p className={styles.nomeJogadorColocado}>{jogador.nome}</p>
