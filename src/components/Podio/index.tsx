@@ -6,9 +6,10 @@ import { avatares } from "../../utils/avatares";
 
 interface PodioProps {
   estilo?: string;
+  tamanhoAvatar?: number;
 }
 
-export default function Podio({ estilo }: PodioProps) {
+export default function Podio({ estilo, tamanhoAvatar }: PodioProps) {
   return (
     <section className={`${styles.secaoPodio} ${estilo}`}>
       {ordemPodio.map((indiceJogador) => {
@@ -18,7 +19,7 @@ export default function Podio({ estilo }: PodioProps) {
         return (
           <div key={jogador.id} className={`${styles.top3} ${styles[`posicao${posicao}`]}`}>
             <div className={styles.informacoesJogador}>
-              <Avatar src={avatares[jogador.avatar]} alt="Avatar" />
+              <Avatar src={avatares[jogador.avatar]} alt="Avatar" tamanho={tamanhoAvatar} />
 
               <h3 className={styles.nomeJogador}>{jogador.nome}</h3>
 
