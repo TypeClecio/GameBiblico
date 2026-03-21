@@ -1,28 +1,8 @@
-// Escopo global da página INICIAL
-.escopo {
-  width: 100vw;
-  max-width: 1000px;
-  margin: 0 auto;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  button {
-    background-color: transparent;
-  }
-}
-
-// Estilo extra no Componente Cabecalho para ser ajustado pela página atual
-.secaoCabecalho {
-  padding: 30px;
-}
-
 // Seção com Pódio onde destaca os 3 melhores jogadore
 .secaoPodio {
   gap: 5px;
   display: flex;
   width: 100%;
-  padding: 0 20px;
 
   // Cada jogador
   .top3 {
@@ -34,17 +14,17 @@
   }
 
   .posicao1 .conteudoColocacao {
-    height: 200px !important;
+    height: 200px;
   }
 
   .posicao2 .conteudoColocacao {
-    height: 175px !important;
+    height: 175px;
   }
 
   .posicao3 .conteudoColocacao {
-    height: 150px !important;
+    height: 150px;
   }
-  
+
   // Dados do jogador
   .informacoesJogador {
     width: 100%;
@@ -71,7 +51,6 @@
   // Posição no Ranking
   .informacoesColocacao {
     width: 100%;
-    height: 200pxpx;
 
     .conteudoColocacao {
       gap: 20px;
@@ -79,12 +58,12 @@
       align-items: center;
       flex-direction: column;
       width: 100%;
-      height: 200px;
       padding: 20px 0;
       border-radius: 10px;
       background: linear-gradient(to bottom, var(--cor-terciaria), transparent);
 
-      .jogadorColocacao, .tempoColocacao {
+      .jogadorColocacao,
+      .tempoColocacao {
         font-family: "Inter";
       }
 
@@ -99,7 +78,7 @@
         transform: rotateZ(45deg);
         background-color: #FFF;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 10%);
-        
+
         .posicaoColocacao {
           font-size: 16px;
           font-family: "Inter";
@@ -111,64 +90,6 @@
       .tempoColocacao {
         font-weight: bold;
       }
-    }
-  }
-}
-
-// Lista com demais jogadores que acertaram todos os livros
-.secaoListaDeJogadores {
-  width: 100%;
-  height: 100%;
-  padding: 25px;
-  padding-bottom: 50px;
-  background-color: #FFF;
-  border-radius: 25px 25px 0 0;
-
-  .listaDemaisColocados {
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .jogadorColocado {
-    display: flex;
-    align-items: center;
-    padding: 15px 25px;
-    border-radius: 20px;
-    background-color: var(--cor-secundaria);
-    justify-content: space-between;
-
-    .posicaoColocado {
-      font-size: 16px;
-      font-weight: 600;
-      font-family: "Poppins";
-    }
-
-    .avatarColocado {
-      width: 50px;
-    }
-
-    .informacoesJogadorColocado {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 80px;
-
-      .nomeJogadorColocado {
-        font-size: 16px;
-      }
-
-      .idJogadorColocado {
-        font-size: 10px;
-        font-family: "Inter";
-        transform: translateY(-5px);
-      }
-    }
-
-    .tempoColocado {
-      font-size: 16px;
-      font-family: "Poppins";
-      font-weight: 600;
     }
   }
 }
