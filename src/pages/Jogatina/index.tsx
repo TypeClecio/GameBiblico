@@ -50,10 +50,12 @@ export default function Jogatina() {
 
   function fimDaPartida(motivo: string) {
     switch (motivo) {
+      case 'zerado':
+        break;
       case 'tempo':
         break;
       case 'respota':
-        navigate("/", { replace: true });
+        // navigate("/", { replace: true });
         break;
     }
 
@@ -64,12 +66,12 @@ export default function Jogatina() {
       tempoDePartida();
     }, 100);
 
-    return () => clearTimeout(contador);
-  }, [tempo]);
+    if (tempo >= 0.1 && tempo <= 0.2) {
+      proximoLivro();
+    }
 
-  useEffect(() => {
-    proximoLivro();
-  }, []);
+    return () => clearTimeout(contador);
+  }, [tempo]); // Iniciar partida e Cronômetro
 
   return (
     <main className={styles.escopo}>
