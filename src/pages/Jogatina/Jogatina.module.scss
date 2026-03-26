@@ -11,7 +11,8 @@
 }
 
 // Seções de botões para decidir se o livro é do Antigo ou Novo Testamento
-.antigoTestamento, .novoTestamento {
+.antigoTestamento,
+.novoTestamento {
   width: 100vw;
   height: 50vh;
   display: flex;
@@ -37,13 +38,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 60px;
 
     .tempoRestante {
-      width: 70%;
       height: 10px;
       border-radius: 10px;
       border: 1px solid #000;
       background-color: #FFBA59;
+      transition: width 100ms linear;
     }
   }
 
@@ -58,6 +60,8 @@
     color: #FFF;
     border: 3px solid #005999;
     background-color: var(--cor-terciaria);
+    user-select: none;
+    pointer-events: none;
 
     > div {
       gap: 5px;
@@ -79,7 +83,7 @@
 
     .tempoDecorrido {
       width: 70px;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 

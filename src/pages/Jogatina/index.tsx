@@ -27,9 +27,12 @@ export default function Jogatina() {
   const [mostrarModal, setMostrarModal] = useState(false);
 
   const [livro, setLivro] = useState<Livro>(); // Mostrar em tela 1 livro dos 66
-  const [tempo, setTempo] = useState(0); // Tempo decorrido na partida
+  const [decorrente, setDecorrente] = useState(0); // Tempo decorrido na partida
+  const [faltante, setFaltante] = useState(100); // Tempo que falta para acabar a partida ( 5 segundos )
 
   function proximoLivro() {
+    if (livrosRestantesNaLista.length === 0) return fimDaPartida(); // Finaliza a partida por não existir próximo livro
+
     const livroSelecionado = livrosRestantesNaLista.splice(0, 1);
     setLivro(livroSelecionado[0]);
   } // Depois dos livros estarem sortido, seleciona sempre o primeiro item.
@@ -38,38 +41,45 @@ export default function Jogatina() {
     const tempoAtual = new Date().getTime();
 
     const tempoDecorrido = Number(((tempoAtual - tempoAoIniciar) / 1000).toFixed(1));
-    setTempo(tempoDecorrido);
+    setDecorrente(tempoDecorrido);
   } // Contador de tempo
+
+  function tempoRegressivo(resposta: boolean) {
+    if (resposta) {
+      return setFaltante(100);
+    } else {
+      setFaltante(t => t - 2);
+      if (faltante <= 0) fimDaPartida();
+    }
+
+  } // Contagem regressiva para finalizar a partida
 
   function correcao(testamentoEscolhido: string) {
     const testamentoAtual = livro?.testamento;
-    if (testamentoAtual === testamentoEscolhido) proximoLivro();
-    fimDaPartida("respota");
-    return;
+    if (testamentoAtual === testamentoEscolhido) {
+      proximoLivro();
+      tempoRegressivo(true);
+      return;
+    };
+    fimDaPartida(); // Finaliza a partida por resposta errada
   } // Checagem se o Testamento escolhido corresponde com o Livro Atual
 
-  function fimDaPartida(motivo: string) {
-    switch (motivo) {
-      case 'tempo':
-        break;
-      case 'respota':
-        navigate("/", { replace: true });
-        break;
-    }
-
+  function fimDaPartida() {
+    // navigate("/final", /*{ replace: true }*/);
   } // Finalizar partida
 
   useEffect(() => {
     const contador = setTimeout(() => {
       tempoDePartida();
+      tempoRegressivo(false);
     }, 100);
 
-    return () => clearTimeout(contador);
-  }, [tempo]);
+    if (decorrente >= 0.1 && decorrente <= 0.2) {
+      proximoLivro();
+    }
 
-  useEffect(() => {
-    proximoLivro();
-  }, []);
+    return () => clearTimeout(contador);
+  }, [decorrente]); // Iniciar partida e Cronômetro
 
   return (
     <main className={styles.escopo}>
@@ -82,7 +92,7 @@ export default function Jogatina() {
 
       <section className={styles.secaoDeIndicadores}>
         <div className={styles.barraDeTempo}>
-          <div className={styles.tempoRestante}></div>
+          <div className={styles.tempoRestante} style={{ width: `${faltante}%` }}></div>
         </div>
 
         <div className={styles.indicadores}>
@@ -95,7 +105,7 @@ export default function Jogatina() {
 
           <div className={styles.tempoDecorrido}>
             <Timer size={18} strokeWidth={2.5} />
-            <span>{tempo}</span>
+            <span>{decorrente}</span>
           </div>
         </div>
 
